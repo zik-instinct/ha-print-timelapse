@@ -82,7 +82,7 @@ Validation runs on every push: [hassfest](https://github.com/home-assistant/acti
 
 Runtime-tested on Home Assistant Core 2026.10.2: UI config flow, UI options flow, full capture-to-video cycle with real ffmpeg, restart recovery, authenticated media serving, panel and card rendering (desktop and mobile). Test footage in any screenshots or test fixtures is synthetic (generated frames from a local test camera, not a real printer). Compatibility claims are limited to what was actually run: any camera entity plus any status sensor with configurable printing states; no printer-brand-specific code paths exist, but only a generic camera + synthetic status sensor have been exercised.
 
-Known limitation: the integration icon shows a placeholder in the UI until the domain is added to the [home-assistant/brands](https://github.com/home-assistant/brands) repository (planned with the public release). The icon files are in `brand/`.
+Brand assets ship inside the integration's `brand/` folder, as required by current HACS validation. The earlier Core 2026.10.2 UI tests showed an icon placeholder before those assets were moved into the integration. Icon display with the final asset placement has not been re-tested.
 
 ## License
 
