@@ -1,0 +1,67 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Print Timelapse Archive",
+        "description": "Record a timelapse of every print. Frames are captured from a camera entity whenever the status sensor reports a printing state, and a video is assembled and archived when the print ends.",
+        "data": {
+          "camera_entity": "Camera watching the printer",
+          "status_entity": "Printer status sensor",
+          "printing_states": "States that mean printing",
+          "capture_interval": "Capture interval",
+          "job_name_attribute": "Status attribute holding the file name",
+          "sidebar_title": "Sidebar title",
+          "fps": "Video frame rate",
+          "reserve_gb": "Free space to keep in reserve",
+          "keep_frames": "Keep individual frames after archiving"
+        },
+        "data_description": {
+          "camera_entity": "Any existing camera entity with a view of the print bed. A test snapshot is taken before saving.",
+          "status_entity": "For example a PrusaLink, OctoPrint or Moonraker status sensor.",
+          "printing_states": "Comma-separated states that mean a print is running, such as: printing, busy",
+          "job_name_attribute": "Optional attribute of the status sensor with the model or G-code file name, shown in the archive.",
+          "fps": "Frames per second of the assembled timelapse videos.",
+          "reserve_gb": "Archiving stops before the disk drops below this much free space.",
+          "keep_frames": "Off by default: only the videos and a preview frame are kept."
+        }
+      }
+    },
+    "error": {
+      "cannot_capture": "Could not get a snapshot from this camera. Check that it works in Home Assistant.",
+      "entity_not_found": "This entity does not exist."
+    },
+    "abort": {
+      "single_instance_allowed": "Only one printer is supported for now.",
+      "already_configured": "This camera is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Print Timelapse Archive options",
+        "data": {
+          "status_entity": "Printer status sensor",
+          "printing_states": "States that mean printing",
+          "capture_interval": "Capture interval",
+          "job_name_attribute": "Status attribute holding the file name",
+          "sidebar_title": "Sidebar title",
+          "fps": "Video frame rate",
+          "reserve_gb": "Free space to keep in reserve",
+          "keep_frames": "Keep individual frames after archiving"
+        },
+        "data_description": {
+          "printing_states": "Comma-separated states that mean a print is running, such as: printing, busy",
+          "job_name_attribute": "Optional attribute of the status sensor with the model or G-code file name.",
+          "reserve_gb": "Archiving stops before the disk drops below this much free space.",
+          "keep_frames": "Off by default: only the videos and a preview frame are kept."
+        }
+      }
+    }
+  },
+  "services": {
+    "rebuild_index": {
+      "name": "Rebuild index",
+      "description": "Rebuilds the archive index from the saved job metadata."
+    }
+  }
+}
