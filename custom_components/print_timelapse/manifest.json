@@ -1,4 +1,6 @@
 {
+  "domain": "print_timelapse",
+  "name": "Print Timelapse Archive",
   "after_dependencies": [
     "lovelace"
   ],
@@ -12,11 +14,9 @@
     "media_source"
   ],
   "documentation": "https://github.com/zik-instinct/ha-print-timelapse",
-  "domain": "print_timelapse",
   "integration_type": "service",
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/zik-instinct/ha-print-timelapse/issues",
-  "name": "Print Timelapse Archive",
   "requirements": [],
   "version": "0.1.0"
 }

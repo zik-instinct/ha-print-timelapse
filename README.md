@@ -1,6 +1,6 @@
 # Print Timelapse Archive
 
-A Home Assistant custom integration that records a timelapse of every 3D print and keeps a searchable archive you can watch in a sidebar panel, on desktop or mobile.
+A Home Assistant custom integration that records a timelapse of every 3D print and keeps a searchable archive you can watch inside a printer-dashboard card or in a sidebar panel, on desktop or mobile.
 
 ![Print Timelapse Archive](brand/icon.png)
 
@@ -13,7 +13,7 @@ A Home Assistant custom integration that records a timelapse of every 3D print a
 - Adds an **archive sensor** (saved-print count, free space, last error) and a **capture sensor** (idle / capturing / assembling) for your own dashboards and automations.
 - Everything stays **local and authenticated**. Videos are served through Home Assistant's signed media paths; nothing is published or sent anywhere.
 
-Everything is configured from the Home Assistant UI. No YAML, no file editing.
+Integration setup and capture settings are configured from the Home Assistant UI. Embedding the card currently uses a short card configuration, shown below.
 
 ## Requirements
 
@@ -69,7 +69,7 @@ If Home Assistant restarts mid-print, capture resumes with the current job; a jo
 
 - Timestamps and gap counts describe **saved frames**, not verified print start/end, and a finished video is **not proof of print success**.
 - This is not a failure detector and never pauses, cancels or controls the printer.
-- One printer per installation for now; multiple printers are on the roadmap.
+- One printer per installation for now.
 - The archive lives on your Home Assistant storage. It is not an off-site backup.
 
 ## Privacy
